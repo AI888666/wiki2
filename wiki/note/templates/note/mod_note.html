@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更改笔记</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        form{
+            width: 400px;
+            background-color: #eee;
+            margin: 100px auto;
+            align-content: center;
+            border: solid 1px #666;
+        }
+        h3{
+            text-align: center;
+            color: red;
+        }
+        #content{
+            margin: 15px;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="/note/list_note">返回列表页</a><br>
+    <form action="/note/mod/{{ note.id }}" method="post">
+        <h3>更改笔记</h3>
+        标题:<input type="text" value="{{ note.title }}" disabled="disabled">
+        <input type="submit" value="提交更改"><br>
+        <textarea name="content" style="width: 360px; height: 200px;" id="content"></textarea>
+    </form>
+</body>
+</html>

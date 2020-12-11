@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="44ae16bc-6b96-4298-b300-7e876d51e651" name="ubuntu">
+        <fileTransfer rootFolder="/home/tarena" accessType="SFTP" host="192.168.168.128" port="22" sshConfigId="06c9936c-2798-4e75-a77a-6c3de7d917a9" sshConfig="tarena@192.168.168.128:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

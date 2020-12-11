@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>笔记列表</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        #div{
+            margin: 10px auto;
+            padding: 20px;
+        }
+         #div div{
+              padding: 20px;
+         }
+        h3{
+            text-align: center;
+
+        }
+        h3 a{
+            padding-left: 50px;
+        }
+        a{
+            text-decoration: none;
+        }
+        span{
+            color: red;
+        }
+        #div2{
+            text-align: center;
+        }
+        #div_a{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        <a href="/note/add_note">添加新笔记</a>
+        <a href="/note/">返回首页</a>
+    </h3>
+    <div id="div">
+        {% for note in page %}
+            <div>
+                <h2><a href="/note/{{ note.id }}">{{ note.title }}</a></h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;{{ note.content }}
+                <div id="div_a">
+                    <a href="/note/mod/{{ note.id }}">更改</a>
+                    <a href="/note/del/{{ note.id }}">删除</a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div id="div2">
+            {#分页功能，上一页功能#}
+            {% if page.has_previous %}
+                <a href="{% url 'list_note' %}?page={{ page.previous_page_number }}">上一页</a>
+            {% else %}
+                上一页
+            {% endif %}
+
+            {% for p in paginator.page_range %}
+            {% if p == page.number %}
+                {{ p }}
+            {% else %}
+                <a href="{% url 'list_note' %}?page={{ p }}">{{ p }}</a>
+            {% endif %}
+            {% endfor %}
+
+
+            {#分页功能，下一页功能#}
+            {% if page.has_next %}
+                <a href="{% url 'list_note' %}?page={{ page.next_page_number }}">下一页</a>
+            {% else %}
+                下一页
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

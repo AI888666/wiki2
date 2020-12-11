@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示笔记</title>
+<style>
+        body{
+            background-color: #eee;
+        }
+        #div{
+            margin: 10px auto;
+            padding: 20px;
+        }
+         #div div{
+              padding: 20px;
+         }
+        h3{
+            text-align: center;
+
+        }
+        span{
+            color: red;
+        }
+    a{
+        text-decoration: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="div">
+        <a href="/note/list_note">返回列表页</a><br>
+        {% for note in note1 %}
+            <h3><span>{{ note.user }}</span>的笔记</h3>
+            <div>
+                <h2>{{ note.title }}</h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;{{ note.content }}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

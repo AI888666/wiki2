@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云笔记首页</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        #div{
+            margin: 20px 20px 0 0;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <a href="/user/logout">退出</a>
+    </div>
+    <div>
+        欢迎<span>{{ username }}</span>登录云笔记
+        <a href="/note/list_note">笔记列表</a>
+        <a href="/note/add_note">添加新笔记</a>
+    </div>
+</body>
+</html>
